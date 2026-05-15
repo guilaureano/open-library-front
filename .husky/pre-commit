@@ -1,0 +1,5 @@
+# Checks the TypeScript types throughout the project (Ensures the build won't break)
+npx tsc --noEmit
+
+# Run Lint and Format only on the modified files.
+npx lint-staged
