@@ -30,6 +30,8 @@ function App() {
 
   const errorMessage =
     error instanceof AppError ? error.message : 'Erro inesperado';
+  const showEmptyState =
+    !isLoading && !isError && debouncedQuery.length > 2 && data.length === 0;
 
   return (
     <main
@@ -62,17 +64,14 @@ function App() {
         )}
 
         {isError && (
-          <div
-            className="
-      rounded-xl
-      border
-      border-red-200
-      bg-red-50
-      p-4
-      text-red-700
-    "
-          >
+          <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-red-700">
             {errorMessage}
+          </div>
+        )}
+
+        {showEmptyState && (
+          <div className="rounded-xl border border-zinc-200 bg-white p-6 text-center text-zinc-500">
+            Nenhum resultado encontrado.
           </div>
         )}
 
