@@ -5,7 +5,7 @@ export function normalizeError(error: unknown): AppError {
     return error;
   }
 
-  if (error instanceof DOMException) {
+  if (error instanceof DOMException && error.name === 'AbortError') {
     return new AppError({
       message: 'Tempo de requisição excedido',
       code: 'TIMEOUT_ERROR',
