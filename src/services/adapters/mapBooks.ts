@@ -1,8 +1,8 @@
-import type { Book, OpenLibraryDoc } from '../types/book.types';
+import type { Book, OpenLibraryDoc } from '@/types/book.types';
 
 const COVERS_URL = import.meta.env.COVERS_URL;
 
-export function mapBook(doc: OpenLibraryDoc): Book {
+export function mapBooks(doc: OpenLibraryDoc): Book {
   return {
     authorName: doc.author_name?.[0] || 'Autor desconhecido',
     id: doc.key,

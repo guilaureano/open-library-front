@@ -1,9 +1,19 @@
-import { mapBook } from '../adapters/mapBook';
-import { searchBooksRequest } from '../api/searchBooks';
-import type { Book } from '../types/book.types';
+import { searchBooks } from '@/api/searchBooks';
+import { mapBooks } from './adapters/mapBooks';
 
-export async function searchBooks(query: string): Promise<Book[]> {
-  const data = await searchBooksRequest(query);
+import { normalizeError } from '@/shared/errors/normalizeError';
+import { logger } from '@/shared/lib/logger/logger';
 
-  return data.docs.slice(0, 20).map(mapBook);
+export async function getBooks(query: string) {
+  try {
+    const response = await searchBooks(query);
+
+    return response.docs.slice(0, 20).map(mapBooks);
+  } catch (error) {
+    const normalized = normalizeError(error);
+
+    logger.error('BOOK SEARCH FAILED', normalized);
+
+    throw normalized;
+  }
 }

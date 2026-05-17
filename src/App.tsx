@@ -5,6 +5,7 @@ import { useBook } from '@/hooks/useBook';
 import { BookList } from '@/components/BookList';
 import { BookSearch } from '@/components/BookSearch';
 import { BookSkeleton } from '@/components/BookSkeleton';
+import { AppError } from './shared/errors/AppError';
 
 function App() {
   const [input, setInput] = useState('');
@@ -20,11 +21,15 @@ function App() {
 
   const {
     data = [],
+    error,
     isLoading,
     isError,
   } = useBook({
     query: debouncedQuery,
   });
+
+  const errorMessage =
+    error instanceof AppError ? error.message : 'Erro inesperado';
 
   return (
     <main
@@ -57,8 +62,17 @@ function App() {
         )}
 
         {isError && (
-          <div className="rounded-xl bg-red-100 p-4 text-red-700">
-            Erro ao buscar livros
+          <div
+            className="
+      rounded-xl
+      border
+      border-red-200
+      bg-red-50
+      p-4
+      text-red-700
+    "
+          >
+            {errorMessage}
           </div>
         )}
 
