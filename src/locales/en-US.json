@@ -1,0 +1,26 @@
+{
+  "error": {
+    "unexpected": "Ops... sorry, unexpected error"
+  },
+  "welcome": {
+    "text1": "Your next favorite book is just a search away.",
+    "text2": "Where books find their readers.",
+    "text3": "The portal to all your reading.",
+    "text4": "Connecting you to your next universe.",
+    "title": "Biblioteca Search",
+    "subtitle": "API Open Library Search",
+    "description": "Search for books using the Open Library API."
+  },
+  "search": {
+    "placeholder": "Search for title or author..."
+  },
+  "topbar": {
+    "logo": "Biblioteca Search",
+    "btn1": {
+      "arialLabel": "Change theme",
+      "label": "Change theme"
+    },
+    "nav1": "Authors",
+    "nav2": "About"
+  }
+}

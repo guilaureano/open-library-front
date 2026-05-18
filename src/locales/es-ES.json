@@ -1,0 +1,26 @@
+{
+  "error": {
+    "unexpected": "Ups... lo siento, error inesperado"
+  },
+  "welcome": {
+    "text1": "Tu próximo libro favorito está a una búsqueda de distancia.",
+    "text2": "Donde los libros encuentran a sus lectores.",
+    "text3": "El portal para todas tus lecturas.",
+    "text4": "Conectándote con tu próximo universo.",
+    "title": "Biblioteca Search",
+    "subtitle": "API Open Library Search",
+    "description": "Busca libros utilizando la API de Open Library."
+  },
+  "search": {
+    "placeholder": "Buscar por título al autor..."
+  },
+  "topbar": {
+    "logo": "Biblioteca Search",
+    "btn1": {
+      "arialLabel": "Cambiar tema",
+      "label": "Cambiar tema"
+    },
+    "nav1": "Autores",
+    "nav2": "Sobre"
+  }
+}
