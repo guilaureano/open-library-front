@@ -1,4 +1,5 @@
 import type { Book } from '@/types/book.types';
+import { Image } from './ui/Image';
 
 type Props = {
   book: Book;
@@ -6,43 +7,20 @@ type Props = {
 
 export function BookCard({ book }: Props) {
   return (
-    <article
-      className="
-        flex
-        gap-4
-        rounded-2xl
-        border
-        border-zinc-200
-        bg-white
-        p-4
-        shadow-sm
-      "
-    >
-      <div
-        className="
-          h-32
-          w-24
-          overflow-hidden
-          rounded-md
-          bg-zinc-100
-          flex-shrink-0
-        "
-      >
-        {book.coverUrl ? (
-          <img
-            src={book.coverUrl}
-            alt={book.title}
-            loading="lazy"
-            className="h-full w-full object-cover"
-          />
-        ) : null}
+    <article className="flex gap-4 rounded-2xl border p-4 bg-surface border-border shadow-soft backdrop-blur">
+      <div className="h-32 w-24 overflow-hidden flex-shrink-0">
+        <Image
+          cover={book.coverUrl}
+          alt={book.title}
+          className="h-full w-full"
+        />
       </div>
 
       <div className="flex flex-col">
         <h2 className="font-semibold text-zinc-900">{book.title}</h2>
-
-        <p className="text-sm text-zinc-600">{book.authorName}</p>
-
+        <p className="text-sm text-muted">
+          {book.authorName?.map((author) => author).join(', ')}
+        </p>
         {book.firstPublishYear && (
           <span className="mt-2 text-xs text-zinc-500">
             {book.firstPublishYear}

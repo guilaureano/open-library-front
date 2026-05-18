@@ -1,6 +1,12 @@
+export type BookCover = {
+  sm: string;
+  md: string;
+  lg: string;
+};
+
 export interface Book {
-  authorName: string;
-  coverUrl?: string;
+  authorName?: string[];
+  coverUrl: BookCover;
   firstPublishYear?: number;
   id: string;
   isbn?: string;

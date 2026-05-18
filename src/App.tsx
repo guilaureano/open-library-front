@@ -34,19 +34,12 @@ function App() {
     !isLoading && !isError && debouncedQuery.length > 2 && data.length === 0;
 
   return (
-    <main
-      className="
-        min-h-screen
-        bg-zinc-50
-        px-4
-        py-8
-      "
-    >
+    <main className="min-h-screen bg-background px-4 py-8">
       <div className="mx-auto max-w-3xl">
         <header className="mb-8">
           <h1 className="text-3xl font-bold">Open Library Search</h1>
 
-          <p className="mt-2 text-zinc-600">
+          <p className="mt-2 text-muted">
             Busque livros usando a Open Library API
           </p>
         </header>

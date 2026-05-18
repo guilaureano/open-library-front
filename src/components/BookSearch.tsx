@@ -10,19 +10,7 @@ export function BookSearch({ value, onChange }: Props) {
       placeholder="Buscar livros..."
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="
-        w-full
-        rounded-xl
-        border
-        border-zinc-300
-        bg-white
-        px-4
-        py-3
-        text-sm
-        outline-none
-        transition
-        focus:border-blue-500
-      "
+      className="w-full rounded-2xl border border-border bg-surface px-4 py-3 text-sm shadow-sm outline-none transition-all duration-200 focus:border-primary focus:ring-4 focus:ring-primary/10"
     />
   );
 }
