@@ -1,4 +1,4 @@
-import './config';
+import '@/shared/i18n/config';
 
 type Props = {
   children: React.ReactNode;

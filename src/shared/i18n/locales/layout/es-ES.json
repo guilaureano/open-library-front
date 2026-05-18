@@ -1,0 +1,12 @@
+{
+  "topbar": {
+    "logo": "Biblioteca Search",
+    "btn1": {
+      "arialLabel": "Cambiar tema",
+      "label": "Cambiar tema"
+    },
+    "nav1": "Libros",
+    "nav2": "Autores",
+    "nav3": "Sobre"
+  }
+}

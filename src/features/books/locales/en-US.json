@@ -13,14 +13,5 @@
   },
   "search": {
     "placeholder": "Search for title or author..."
-  },
-  "topbar": {
-    "logo": "Biblioteca Search",
-    "btn1": {
-      "arialLabel": "Change theme",
-      "label": "Change theme"
-    },
-    "nav1": "Authors",
-    "nav2": "About"
   }
 }
