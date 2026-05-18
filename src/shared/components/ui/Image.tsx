@@ -1,4 +1,4 @@
-import type { BookCover } from '@/types/book.types';
+import type { BookCover } from '@/features/books/types';
 import { useState } from 'react';
 
 type Props = {
