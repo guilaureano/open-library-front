@@ -1,5 +1,5 @@
-import { ENV } from '@/config/env';
-import type { Book, OpenLibraryDoc } from '@/types/book.types';
+import type { Book, OpenLibraryDoc } from '@/features/books/types';
+import { ENV } from '@/shared/config/env';
 
 export function mapBooks(doc: OpenLibraryDoc): Book {
   return {

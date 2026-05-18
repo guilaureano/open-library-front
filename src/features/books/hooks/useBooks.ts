@@ -1,13 +1,13 @@
-import { getBooks } from '@/services/bookService';
+import { getBooks } from '@/features/books/services/bookService';
+import type { Book } from '@/features/books/types';
 import type { AppError } from '@/shared/errors/AppError';
-import type { Book } from '@/types/book.types';
 import { useQuery } from '@tanstack/react-query';
 
-interface IUseBook {
+interface IUseBooks {
   query: string;
 }
 
-export function useBook({ query }: IUseBook) {
+export function useBooks({ query }: IUseBooks) {
   return useQuery<Book[], AppError>({
     queryKey: ['books', query],
     queryFn: () => getBooks(query),

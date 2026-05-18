@@ -1,5 +1,5 @@
-import type { Book } from '@/types/book.types';
-import { Image } from './ui/Image';
+import type { Book } from '@/features/books/types';
+import { Image } from '@/shared/components/ui/Image';
 
 type Props = {
   book: Book;
