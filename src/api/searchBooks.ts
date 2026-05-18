@@ -1,5 +1,5 @@
 import { ENV } from '@/config/env';
-import { httpClient } from '@/shared/lib/http/httpClient';
+import { httpClient } from '@/lib/http/httpClient';
 import type { OpenLibrarySearchResponse } from '../types/book.types';
 
 export function searchBooks(query: string) {

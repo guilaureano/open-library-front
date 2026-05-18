@@ -1,8 +1,8 @@
 import { searchBooks } from '@/api/searchBooks';
 import { mapBooks } from './adapters/mapBooks';
 
+import { logger } from '@/lib/logger/logger';
 import { normalizeError } from '@/shared/errors/normalizeError';
-import { logger } from '@/shared/lib/logger/logger';
 
 export async function getBooks(query: string) {
   try {
