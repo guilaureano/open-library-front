@@ -5,11 +5,15 @@ import { useBook } from '@/hooks/useBook';
 import { BookList } from '@/components/BookList';
 import { BookSearch } from '@/components/BookSearch';
 import { BookSkeleton } from '@/components/BookSkeleton';
+import { useTranslation } from 'react-i18next';
+import { BookWelcome } from './components/BookWelcome';
+import { TopBar } from './components/TopBar';
 import { AppError } from './shared/errors/AppError';
 
 function App() {
   const [input, setInput] = useState('');
   const [debouncedQuery, setDebouncedQuery] = useState('');
+  const { t } = useTranslation('books');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -29,48 +33,45 @@ function App() {
   });
 
   const errorMessage =
-    error instanceof AppError ? error.message : 'Erro inesperado';
+    error instanceof AppError ? error.message : t('error.unexpected');
   const showEmptyState =
     !isLoading && !isError && debouncedQuery.length > 2 && data.length === 0;
 
   return (
-    <main className="min-h-screen bg-background px-4 py-8">
-      <div className="mx-auto max-w-3xl">
-        <header className="mb-8">
-          <h1 className="text-3xl font-bold">Open Library Search</h1>
+    <div className="min-h-screen bg-background">
+      <TopBar />
+      <main className="min-h-screen mx-auto max-w-6x1 px-6 py-16">
+        <div className="mx-auto max-w-3xl">
+          <BookWelcome />
 
-          <p className="mt-2 text-muted">
-            Busque livros usando a Open Library API
-          </p>
-        </header>
+          <div className="mb-6">
+            <BookSearch value={input} onChange={setInput} />
+          </div>
 
-        <div className="mb-6">
-          <BookSearch value={input} onChange={setInput} />
+          {isLoading && (
+            <div className="grid gap-4">
+              {Array.from({ length: 5 }).map((_, index) => (
+                <BookSkeleton key={index} />
+              ))}
+            </div>
+          )}
+
+          {isError && (
+            <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-red-700">
+              {errorMessage}
+            </div>
+          )}
+
+          {showEmptyState && (
+            <div className="rounded-xl border border-zinc-200 bg-white p-6 text-center text-zinc-500">
+              Nenhum resultado encontrado.
+            </div>
+          )}
+
+          {!isLoading && !isError && <BookList books={data} />}
         </div>
-
-        {isLoading && (
-          <div className="grid gap-4">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <BookSkeleton key={index} />
-            ))}
-          </div>
-        )}
-
-        {isError && (
-          <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-red-700">
-            {errorMessage}
-          </div>
-        )}
-
-        {showEmptyState && (
-          <div className="rounded-xl border border-zinc-200 bg-white p-6 text-center text-zinc-500">
-            Nenhum resultado encontrado.
-          </div>
-        )}
-
-        {!isLoading && !isError && <BookList books={data} />}
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
 
