@@ -7,22 +7,26 @@ type Props = {
 
 export function BookCard({ book }: Props) {
   return (
-    <article className="flex gap-4 rounded-2xl border p-4 bg-surface border-border shadow-soft backdrop-blur">
-      <div className="h-32 w-24 overflow-hidden flex-shrink-0">
+    <article className="group cursor-pointer">
+      <div className="mb-4 aspect-[2/3] overflow-hidden rounded-md bg-muted">
         <Image
           cover={book.coverUrl}
           alt={book.title}
-          className="h-full w-full"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
 
-      <div className="flex flex-col">
-        <h2 className="font-semibold text-zinc-900">{book.title}</h2>
-        <p className="text-sm text-muted">
-          {book.authorName?.map((author) => author).join(', ')}
-        </p>
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h2 className="truncate text-base font-medium tracking-tight">
+            {book.title}
+          </h2>
+          <p className="mt-0.5 text-sm text-muted-foreground">
+            {book.authorName?.map((author) => author).join(', ')}
+          </p>
+        </div>
         {book.firstPublishYear && (
-          <span className="mt-2 text-xs text-zinc-500">
+          <span className="shrink-0 text-xs text-muted-foreground">
             {book.firstPublishYear}
           </span>
         )}

@@ -3,14 +3,12 @@ export function BookSkeleton() {
     <div
       className="
         animate-pulse
-        rounded-2xl
         border
         border-zinc-200
-        p-4
       "
     >
-      <div className="flex gap-4">
-        <div className="h-32 w-24 rounded bg-zinc-200" />
+      <div className="flex-column">
+        <div className="h-full w-full aspect-[2/3] rounded bg-zinc-200 mb-4" />
 
         <div className="flex-1">
           <div className="mb-2 h-4 w-3/4 rounded bg-zinc-200" />
