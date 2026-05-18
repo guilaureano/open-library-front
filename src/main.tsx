@@ -1,9 +1,9 @@
-import { I18nProvider } from '@/lib/i18n/provider.tsx';
-import { queryClient } from '@/lib/react-query/index.ts';
+import App from '@/app/App';
+import { I18nProvider } from '@/app/providers/i18n/provider.tsx';
+import { queryClient } from '@/app/providers/react-query/index.ts';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(

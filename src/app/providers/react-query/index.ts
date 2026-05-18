@@ -1,6 +1,5 @@
+import { logger } from '@/shared/lib/logger/logger';
 import { QueryCache, QueryClient } from '@tanstack/react-query';
-
-import { logger } from '../logger/logger';
 
 export const queryClient = new QueryClient({
   queryCache: new QueryCache({
