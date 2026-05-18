@@ -11,7 +11,7 @@ export const BookWelcome = () => {
       <h1 className="mb-4 text-5xl font-medium leading-[1.05] tracking-tight md:text-6xl">
         {t('welcome.text1')}
       </h1>
-      <p className="mt-2 text-muted">{t('welcome.description')}</p>
+      <p className="mt-2 text-muted-foreground">{t('welcome.description')}</p>
     </section>
   );
 };
