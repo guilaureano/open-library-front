@@ -39,7 +39,9 @@ export function LanguageSwitcher() {
             className={`flex items-center gap-2 rounded-xl px-2 py-1 text-sm font-medium transition-all duration-200 ${active ? `bg-primary text-primary-foreground shadow-sm` : `text-muted-foreground hover:bg-surface-muted`}`}
           >
             <img height="20" width="20" src={lang.flag} alt={lang.label} />
-            <span>{lang.label}</span>
+            <span className="hidden md:inline text-sm font-medium">
+              {lang.label}
+            </span>
           </button>
         );
       })}
