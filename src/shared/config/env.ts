@@ -1,5 +1,7 @@
 const apiUrl = import.meta.env.VITE_API_URL;
 const coversUrl = import.meta.env.VITE_COVERS_URL;
+const githubnUrl = import.meta.env.VITE_GITHUB;
+const linkedinUrl = import.meta.env.VITE_LINKEDIN;
 
 if (!apiUrl) {
   throw new Error(
@@ -16,4 +18,6 @@ if (!coversUrl) {
 export const ENV = {
   API_URL: apiUrl,
   COVERS_URL: coversUrl,
+  GITHUB_PROFILE: githubnUrl,
+  LINKEDIN_PROFILE: linkedinUrl,
 };
