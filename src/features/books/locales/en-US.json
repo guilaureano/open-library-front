@@ -8,10 +8,10 @@
     "text3": "The portal to all your reading.",
     "text4": "Connecting you to your next universe.",
     "title": "Biblioteca Search",
-    "subtitle": "API Open Library Search",
+    "subtitle": "API Open Library . Org",
     "description": "Search for books using the Open Library API."
   },
   "search": {
-    "placeholder": "Search for title or author..."
+    "placeholder": "Search for title..."
   }
 }

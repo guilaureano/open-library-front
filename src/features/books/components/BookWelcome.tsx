@@ -8,7 +8,7 @@ export const BookWelcome = () => {
       <p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">
         {t('welcome.subtitle')}
       </p>
-      <h1 className="mb-4 text-5xl font-medium leading-[1.05] tracking-tight md:text-6xl">
+      <h1 className="mb-4 text-5xl font-medium leading-[1.05] tracking-tight md:text-5xl">
         {t('welcome.text1')}
       </h1>
       <p className="mt-2 text-muted-foreground">{t('welcome.description')}</p>
