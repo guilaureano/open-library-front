@@ -1,3 +1,7 @@
 export function AuthorPage() {
-  return <div>Authors page</div>;
+  return (
+    <main className="flex-1 w-full mx-auto max-w-6xl px-6 py-16">
+      <div>Authors page</div>
+    </main>
+  );
 }

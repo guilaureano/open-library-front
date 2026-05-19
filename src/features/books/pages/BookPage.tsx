@@ -34,7 +34,7 @@ export const BookPage = () => {
   const showEmptyState =
     !isLoading && !isError && debouncedQuery.length > 2 && data.length === 0;
   return (
-    <>
+    <main className="flex-1 w-full mx-auto max-w-6xl px-6 py-16">
       <BookWelcome />
 
       <div className="mb-10 flex flex-col gap-4 border-y border-border py-4 md:flex-row md:items-center md:justify-between">
@@ -62,6 +62,6 @@ export const BookPage = () => {
       )}
 
       {!isLoading && !isError && <BookList books={data} />}
-    </>
+    </main>
   );
 };
