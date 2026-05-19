@@ -1,6 +1,7 @@
 import bookIcon from '@/shared/assets/book.svg';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export const TopBar = () => {
   const { t } = useTranslation('layout');
@@ -31,6 +32,7 @@ export const TopBar = () => {
               {t('topbar.nav2')}
             </NavLink>
           </nav>
+          <LanguageSwitcher />
         </div>
       </div>
     </header>
