@@ -1,6 +1,7 @@
 import { AppError } from '@/shared/errors/AppError';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
 import { BookList } from '../components/BookList';
 import { BookSearch } from '../components/BookSearch';
 import { BookSkeleton } from '../components/BookSkeleton';
@@ -8,9 +9,11 @@ import { BookWelcome } from '../components/BookWelcome';
 import { useBooks } from '../hooks/useBooks';
 
 export const BookPage = () => {
-  const [input, setInput] = useState('');
-  const [debouncedQuery, setDebouncedQuery] = useState('');
   const { t } = useTranslation('books');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchFromUrl = searchParams.get('search') ?? '';
+  const [input, setInput] = useState(searchFromUrl);
+  const [debouncedQuery, setDebouncedQuery] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -19,6 +22,18 @@ export const BookPage = () => {
 
     return () => clearTimeout(timer);
   }, [input]);
+
+  useEffect(() => {
+    const trimmed = input.trim();
+
+    if (trimmed) {
+      setSearchParams({
+        search: trimmed,
+      });
+    } else {
+      setSearchParams({});
+    }
+  }, [input, setSearchParams]);
 
   const {
     data = [],

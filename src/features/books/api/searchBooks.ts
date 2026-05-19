@@ -7,7 +7,7 @@ import type { OpenLibrarySearchResponse } from '../types';
 export function searchBooks(query: string) {
   const locale = getLocale();
   const language = mapLocaleToOpenLibrary(locale);
-  const fullQuery = `${query} AND language:${language}`;
+  const fullQuery = `title: ${query} AND language:${language}`;
 
   const fields = [
     'key',
