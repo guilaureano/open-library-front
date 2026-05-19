@@ -3,6 +3,11 @@
   "text2": "El libro adecuado",
   "text3": "en el momento adecuado.",
   "text4": "Deja de perder horas eligiendo qué leer. Hemos creado un mapa para guiar tu curiosidad por el universo literario. Elige tu punto de partida a continuación y comienza a explorar.",
-  "btn1": "Buscar libros",
-  "btn2": "Buscar autores"
+  "place1": "Buscar Libros...",
+  "place2": "Buscar Autores...",
+  "aria1": "Tipo de búsqueda",
+  "aria2": "Término de búsqueda",
+  "label1": "Libros",
+  "label2": "Autores",
+  "btn1": "Buscar"
 }

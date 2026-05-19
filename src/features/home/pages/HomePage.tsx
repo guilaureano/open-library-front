@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { NavLink } from 'react-router-dom';
+import { HomeInputForm } from '../components/HomeInputForm';
 
 export function HomePage() {
   const { t } = useTranslation('home');
+
   return (
-    <main className="relative flex-1 overflow-hidden">
-      <section className="mx-auto flex max-w-4xl flex-col items-center px-6 py-24 text-center md:py-36">
+    <main className="flex flex-1 items-center justify-center overflow-hidden">
+      <section className="mx-auto flex max-w-4xl flex-col items-center px-6 py-20 text-center">
         <p className="mb-6 text-xs uppercase tracking-[0.3em] text-accent">
           {t('text1')}
         </p>
@@ -25,21 +26,7 @@ export function HomePage() {
           {t('text4')}
         </p>
 
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <NavLink
-            to="/books"
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:gap-3 hover:bg-primary/90"
-          >
-            {t('btn1')}
-            {/* <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} /> */}
-          </NavLink>
-          <NavLink
-            to="/authors"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-background/60 px-7 py-3 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-secondary"
-          >
-            {t('btn2')}
-          </NavLink>
-        </div>
+        <HomeInputForm />
       </section>
     </main>
   );

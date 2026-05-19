@@ -3,6 +3,11 @@
   "text2": "The right book",
   "text3": "at the right time.",
   "text4": "Stop spending hours choosing what to read. We've created a map to guide your curiosity through the literary universe. Choose your starting point below and begin exploring.",
-  "btn1": "Search for Books",
-  "btn2": "Search for Authors"
+  "place1": "Search for Books...",
+  "place2": "Search for Authors...",
+  "aria1": "Type of search",
+  "aria2": "Research thermos",
+  "label1": "Books",
+  "label2": "Authors",
+  "btn1": "Search"
 }
