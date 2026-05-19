@@ -9,15 +9,14 @@ export interface Book {
   coverUrl: BookCover;
   firstPublishYear?: number;
   id: string;
-  isbn?: string;
   title: string;
 }
 
 export interface OpenLibraryDoc {
   author_name?: string[];
   cover_i?: number;
+  editions?: OpenLibrarySearchResponse;
   first_publish_year?: number;
-  isbn?: string[];
   key: string;
   title: string;
 }

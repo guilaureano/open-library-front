@@ -2,15 +2,15 @@ import type { Book, OpenLibraryDoc } from '@/features/books/types';
 import { ENV } from '@/shared/config/env';
 
 export function mapBooks(doc: OpenLibraryDoc): Book {
+  const cover = doc.editions?.docs[0].cover_i || doc.cover_i;
+  const title = doc.editions?.docs[0].title || doc.title;
   return {
     authorName: doc.author_name,
-    id: doc.key,
-    title: doc.title,
-    coverUrl: doc.cover_i
+    coverUrl: cover
       ? {
-          sm: `${ENV.COVERS_URL}${doc.cover_i}-S.jpg`,
-          md: `${ENV.COVERS_URL}${doc.cover_i}-M.jpg`,
-          lg: `${ENV.COVERS_URL}${doc.cover_i}-L.jpg`,
+          sm: `${ENV.COVERS_URL}${cover}-S.jpg`,
+          md: `${ENV.COVERS_URL}${cover}-M.jpg`,
+          lg: `${ENV.COVERS_URL}${cover}-L.jpg`,
         }
       : {
           sm: `${ENV.API_URL}/static/images/icons/avatar_book-sm.png`,
@@ -18,6 +18,7 @@ export function mapBooks(doc: OpenLibraryDoc): Book {
           lg: `${ENV.API_URL}/static/images/icons/avatar_book-lg.png`,
         },
     firstPublishYear: doc.first_publish_year,
-    isbn: doc.isbn?.[0],
+    id: doc.key,
+    title: title,
   };
 }

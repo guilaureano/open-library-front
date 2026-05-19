@@ -4,7 +4,7 @@ export function useLocale() {
   const { i18n } = useTranslation();
 
   return {
-    locale: i18n.language,
-    changeLocale: i18n.changeLanguage,
+    locale: i18n.resolvedLanguage ?? i18n.language,
+    changeLocale: (locale: string) => i18n.changeLanguage(locale),
   };
 }

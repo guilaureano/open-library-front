@@ -8,7 +8,7 @@ type Props = {
 export function BookCard({ book }: Props) {
   return (
     <article className="group cursor-pointer">
-      <div className="mb-4 aspect-[2/3] overflow-hidden rounded-md bg-muted">
+      <div className="mb-4 aspect-2/3 overflow-hidden rounded-md bg-muted">
         <Image
           cover={book.coverUrl}
           alt={book.title}
