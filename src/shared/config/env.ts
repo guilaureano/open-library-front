@@ -1,7 +1,8 @@
-const apiUrl = import.meta.env.VITE_API_URL;
-const coversUrl = import.meta.env.VITE_COVERS_URL;
-const githubnUrl = import.meta.env.VITE_GITHUB;
-const linkedinUrl = import.meta.env.VITE_LINKEDIN;
+const apiUrl = import.meta.env.VITE_API_URL ?? process.env.VITE_API_URL;
+const coversUrl =
+  import.meta.env.VITE_COVERS_URL ?? process.env.VITE_COVERS_URL;
+const githubnUrl = import.meta.env.VITE_GITHUB ?? process.env.VITE_GITHUB;
+const linkedinUrl = import.meta.env.VITE_LINKEDIN ?? process.env.VITE_LINKEDIN;
 
 if (!apiUrl) {
   throw new Error(
