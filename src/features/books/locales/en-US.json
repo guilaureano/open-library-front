@@ -12,6 +12,7 @@
     "description": "Search for books using the Open Library API."
   },
   "search": {
-    "placeholder": "Search for title..."
+    "placeholder": "Search for title...",
+    "label1": "Matching results: "
   }
 }

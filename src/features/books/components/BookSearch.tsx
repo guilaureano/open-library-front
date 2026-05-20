@@ -18,7 +18,7 @@ export function BookSearch({ value, onChange, totalResults }: Props) {
         className="flex-4 rounded-2xl border border-border bg-surface px-4 py-2 text-sm shadow-sm outline-none transition-all duration-200 focus:border-primary focus:ring-4 focus:ring-primary/10"
       />
       <p className="flex-2 flex font-mono justify-end text-xs uppercase tracking-[0.2em] text-muted-foreground">
-        {totalResults && `Resultados correspondentes: ${totalResults}`}
+        {totalResults && `${t('search.label1')}${totalResults}`}
       </p>
     </div>
   );
