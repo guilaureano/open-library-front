@@ -2,11 +2,13 @@ import { AppError } from '@/shared/errors/AppError';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
+import { BookDetailsDialog } from '../components/BookDetailsDialog';
 import { BookList } from '../components/BookList';
 import { BookSearch } from '../components/BookSearch';
 import { BookSkeleton } from '../components/BookSkeleton';
 import { BookWelcome } from '../components/BookWelcome';
 import { useBooks } from '../hooks/useBooks';
+import type { Book } from '../types';
 
 export const BookPage = () => {
   const { t } = useTranslation('books');
@@ -14,6 +16,7 @@ export const BookPage = () => {
   const searchFromUrl = searchParams.get('search') ?? '';
   const [input, setInput] = useState(searchFromUrl);
   const [debouncedQuery, setDebouncedQuery] = useState('');
+  const [selected, setSelected] = useState<Book | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -64,7 +67,14 @@ export const BookPage = () => {
           Nenhum resultado encontrado.
         </div>
       )}
-      {!isLoading && !isError && <BookList books={books} />}
+      {!isLoading && !isError && (
+        <BookList books={books} onSelect={setSelected} />
+      )}
+      <BookDetailsDialog
+        open={!!selected}
+        book={selected}
+        onClose={() => setSelected(null)}
+      />
     </main>
   );
 };
