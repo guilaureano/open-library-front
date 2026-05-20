@@ -35,48 +35,36 @@ export const BookPage = () => {
     }
   }, [input, setSearchParams]);
 
-  const {
-    data = [],
-    error,
-    isLoading,
-    isError,
-  } = useBooks({
+  const { data, error, isLoading, isError } = useBooks({
     query: debouncedQuery,
   });
+  const books = data?.docs ?? [];
 
   const errorMessage =
     error instanceof AppError ? error.message : t('error.unexpected');
   const showEmptyState =
-    !isLoading && !isError && debouncedQuery.length > 2 && data.length === 0;
+    !isLoading && !isError && debouncedQuery.length > 2 && books.length === 0;
+
   return (
     <main className="flex-1 w-full mx-auto max-w-6xl px-6 py-16">
       <BookWelcome />
-
-      <div className="mb-10 flex flex-col gap-4 border-y border-border py-4 md:flex-row md:items-center md:justify-between">
-        <BookSearch value={input} onChange={setInput} />
-      </div>
-
-      {isLoading && (
-        <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 20 }).map((_, index) => (
-            <BookSkeleton key={index} />
-          ))}
-        </div>
-      )}
-
+      <BookSearch
+        value={input}
+        onChange={setInput}
+        totalResults={data?.totalResults}
+      />
+      {isLoading && <BookSkeleton />}
       {isError && (
-        <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-red-700">
+        <div className="border-y border-red-200 bg-red-50 p-4 text-red-700  font-extralight">
           {errorMessage}
         </div>
       )}
-
       {showEmptyState && (
-        <div className="rounded-xl border border-zinc-200 bg-white p-6 text-center text-zinc-500">
+        <div className="border-y border-zinc-200 p-4 font-extralight">
           Nenhum resultado encontrado.
         </div>
       )}
-
-      {!isLoading && !isError && <BookList books={data} />}
+      {!isLoading && !isError && <BookList books={books} />}
     </main>
   );
 };

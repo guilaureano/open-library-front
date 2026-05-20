@@ -7,7 +7,11 @@ export async function getBooks(query: string) {
   try {
     const response = await searchBooks(query);
 
-    return response.docs.slice(0, 20).map(mapBooks);
+    return {
+      totalResults: response.numFound,
+      start: response.start,
+      docs: response.docs.slice(0, 20).map(mapBooks),
+    };
   } catch (error) {
     const normalized = normalizeError(error);
 

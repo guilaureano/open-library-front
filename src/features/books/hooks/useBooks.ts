@@ -1,5 +1,5 @@
 import { getBooks } from '@/features/books/services/bookService';
-import type { Book } from '@/features/books/types';
+import type { BooksResult } from '@/features/books/types';
 import type { AppError } from '@/shared/errors/AppError';
 import { useQuery } from '@tanstack/react-query';
 
@@ -8,7 +8,7 @@ interface IUseBooks {
 }
 
 export function useBooks({ query }: IUseBooks) {
-  return useQuery<Book[], AppError>({
+  return useQuery<BooksResult, AppError>({
     queryKey: ['books', query],
     queryFn: () => getBooks(query),
     enabled: query.length > 2,

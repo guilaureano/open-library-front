@@ -12,6 +12,12 @@ export interface Book {
   title: string;
 }
 
+export interface BooksResult {
+  totalResults: number;
+  start: number;
+  docs: Book[];
+}
+
 export interface OpenLibraryDoc {
   author_name?: string[];
   cover_i?: number;
