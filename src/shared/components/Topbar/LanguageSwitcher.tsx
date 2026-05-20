@@ -5,19 +5,19 @@ import { useLocale } from '@/shared/hooks/useLocale';
 
 const languages = [
   {
-    code: 'pt-BR',
-    label: 'pt',
-    flag: brazil,
-  },
-  {
     code: 'en-US',
-    label: 'en',
+    label: 'EN',
     flag: usa,
   },
   {
     code: 'es-ES',
-    label: 'es',
+    label: 'ES',
     flag: spain,
+  },
+  {
+    code: 'pt-BR',
+    label: 'PT',
+    flag: brazil,
   },
 ] as const;
 
@@ -25,7 +25,7 @@ export function LanguageSwitcher() {
   const { locale, changeLocale } = useLocale();
 
   return (
-    <div className="flex items-center rounded-3xl border border-border bg-surface p-1 gap-2">
+    <div className="flex items-center rounded-3xl border border-border bg-surface gap-2">
       {languages.map((lang) => {
         const active = locale === lang.code;
 
@@ -36,10 +36,10 @@ export function LanguageSwitcher() {
             onClick={() => changeLocale(lang.code)}
             aria-label={`Switch language to ${lang.label}`}
             aria-pressed={active}
-            className={`flex items-center gap-2 rounded-xl px-2 py-1 text-sm font-medium transition-all duration-200 ${active ? `bg-primary text-primary-foreground shadow-sm` : `text-muted-foreground hover:bg-surface-muted`}`}
+            className={`flex items-center gap-2 rounded-3xl px-2 py-1 text-sm font-medium text-center transition-all duration-200 ${active ? `bg-primary text-primary-foreground shadow-sm` : `text-muted-foreground hover:bg-surface-muted`}`}
           >
             <img height="20" width="20" src={lang.flag} alt={lang.label} />
-            <span className="hidden md:inline text-sm font-medium">
+            <span className="hidden md:inline text-sm font-normal">
               {lang.label}
             </span>
           </button>
