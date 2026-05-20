@@ -5,7 +5,7 @@ export function mapBooks(doc: OpenLibraryDoc): Book {
   const cover = doc.editions?.docs[0].cover_i || doc.cover_i;
   const title = doc.editions?.docs[0].title || doc.title;
   return {
-    authorName: doc.author_name,
+    authorName: doc.author_name?.map((author) => author).join(', '),
     coverUrl: cover
       ? {
           sm: `${ENV.COVERS_URL}${cover}-S.jpg`,

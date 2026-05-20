@@ -27,9 +27,7 @@ export function BookCard({ book, onClick }: Props) {
             <h2 className="truncate text-base font-medium tracking-tight">
               {book.title}
             </h2>
-            <p className="mt-0.5 text-sm text-accent">
-              {book.authorName?.map((author) => author).join(', ')}
-            </p>
+            <p className="mt-0.5 text-sm text-accent">{book.authorName}</p>
           </div>
           {book.firstPublishYear && (
             <span className="shrink-0 font-semibold text-xs text-muted-foreground">
