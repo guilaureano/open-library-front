@@ -22,6 +22,6 @@ export function searchBooks(query: string) {
   const fieldsQuery = `&fields=${fields.join(',')}`;
 
   return httpClient<OpenLibrarySearchResponse>(
-    `${ENV.API_URL}search.json?q=${encodeURIComponent(fullQuery)}${fieldsQuery}`,
+    `${ENV.API_URL}/search.json?q=${encodeURIComponent(fullQuery)}${fieldsQuery}`,
   );
 }

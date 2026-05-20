@@ -32,3 +32,29 @@ export interface OpenLibrarySearchResponse {
   numFound: number;
   start: number;
 }
+
+export interface OpenLibraryBookDetailsResponse {
+  description?:
+    | string
+    | {
+        value: string;
+      };
+
+  editions?: OpenLibrarySearchResponse;
+
+  title: string;
+
+  covers?: number[];
+
+  subjects?: string[];
+
+  first_publish_date?: string;
+}
+
+export interface BookDetails {
+  title: string;
+  description?: string;
+  coverUrl: BookCover;
+  subjects: string[];
+  firstPublishDate?: string;
+}

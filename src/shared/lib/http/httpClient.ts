@@ -27,13 +27,13 @@ export async function httpClient<T>(
       url,
     });
 
+    const headers = new Headers(fetchOptions.headers);
+    headers.set('Accept', 'application/json');
+
     const response = await fetch(url, {
       ...fetchOptions,
       signal: controller.signal,
-      headers: {
-        'Content-Type': 'application/json',
-        ...fetchOptions.headers,
-      },
+      headers,
     });
 
     logger.info('HTTP RESPONSE', {
