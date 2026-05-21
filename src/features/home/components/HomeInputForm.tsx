@@ -49,13 +49,13 @@ export const HomeInputForm = () => {
 
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center mt-3">
         <div className="flex flex-1 items-center gap-2 rounded-xl bg-background/60 px-4 py-2">
-          <img src={searchIcon} className="h-4 w-4" alt="search icon" />
+          <img src={searchIcon} className="h-4 w-4 mr-2" alt="search icon" />
           <input
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={type === 'title' ? t('place1') : t('place2')}
-            className="w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+            className="w-full bg-transparent text-ms font-mono outline-none placeholder:text-muted-foreground"
             aria-label={t('aria2')}
           />
         </div>
