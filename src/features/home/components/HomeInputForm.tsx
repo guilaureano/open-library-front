@@ -49,7 +49,7 @@ export const HomeInputForm = () => {
 
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center mt-3">
         <div className="flex flex-1 items-center gap-2 rounded-xl bg-background/60 px-4 py-2">
-          <img src={searchIcon} className="h-4 w-4" />
+          <img src={searchIcon} className="h-4 w-4" alt="search icon" />
           <input
             type="search"
             value={query}

@@ -7,7 +7,7 @@ export function HomePage() {
   return (
     <main className="flex flex-1 items-center justify-center overflow-hidden">
       <section className="mx-auto flex max-w-4xl flex-col items-center px-6 py-20 text-center">
-        <p className="mb-6 text-xs uppercase tracking-[0.3em] text-accent">
+        <p className="mb-6 text-xs uppercase tracking-[0.3em] font-mono">
           {t('text1')}
         </p>
 

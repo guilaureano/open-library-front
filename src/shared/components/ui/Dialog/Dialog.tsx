@@ -87,7 +87,11 @@ export function DialogContent({ children, className }: DialogContentProps) {
             onClick={ctx.onClose}
             className="absolute right-4 top-4 z-20 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
           >
-            <img src={closeIcon} className="h-4 w-4 bg-amber-50 rounded-2xl" />
+            <img
+              src={closeIcon}
+              className="h-4 w-4 bg-amber-50 rounded-2xl"
+              alt="Close Button icon"
+            />
             <span className="sr-only">Close</span>
           </button>
         </div>

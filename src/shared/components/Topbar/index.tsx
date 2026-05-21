@@ -16,7 +16,7 @@ export const Topbar = () => {
     <header className="relative border-b border-border bg-background">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
         <NavLink to="/" className="flex items-center gap-2" onClick={closeMenu}>
-          <img src={bookIcon} alt="book icon" />
+          <img src={bookIcon} alt={`Book icon - ${t('topbar.logo')}`} />
           <span className="font-display text-lg font-semibold tracking-tight">
             {t('topbar.logo')}
           </span>
@@ -51,6 +51,7 @@ export const Topbar = () => {
                 width={24}
                 height={24}
                 className="text-muted"
+                alt="menu button icon"
               />
             ) : (
               <img
@@ -58,6 +59,7 @@ export const Topbar = () => {
                 width={24}
                 height={24}
                 className="text-muted"
+                alt="close button icon"
               />
             )}
           </button>

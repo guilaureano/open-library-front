@@ -29,7 +29,7 @@ export const Footer = () => {
                 height={24}
                 width={24}
                 src={GitHubIcon}
-                alt="GitHub"
+                alt="GitHub link icon"
               />
             </a>
 
@@ -44,7 +44,7 @@ export const Footer = () => {
                 height={24}
                 width={24}
                 src={LinkdinIcon}
-                alt="LinkedIn"
+                alt="LinkedIn link icon"
               />
             </a>
           </div>

@@ -8,16 +8,19 @@ const languages = [
     code: 'en-US',
     label: 'EN',
     flag: usa,
+    name: 'United States of America',
   },
   {
     code: 'es-ES',
     label: 'ES',
     flag: spain,
+    name: 'España',
   },
   {
     code: 'pt-BR',
     label: 'PT',
     flag: brazil,
+    name: 'Brasil',
   },
 ] as const;
 
@@ -38,7 +41,12 @@ export function LanguageSwitcher() {
             aria-pressed={active}
             className={`flex items-center gap-2 rounded-3xl px-2 py-1 text-sm font-medium text-center transition-all duration-200 ${active ? `bg-primary text-primary-foreground shadow-sm` : `text-muted-foreground hover:bg-surface-muted`}`}
           >
-            <img height="20" width="20" src={lang.flag} alt={lang.label} />
+            <img
+              height="20"
+              width="20"
+              src={lang.flag}
+              alt={`Flag icon ${lang.name}`}
+            />
             <span className="hidden md:inline text-sm font-normal">
               {lang.label}
             </span>
