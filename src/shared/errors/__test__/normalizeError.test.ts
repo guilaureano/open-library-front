@@ -21,15 +21,28 @@ describe('normalizeError', () => {
     expect(result).toBe(appError);
   });
 
-  it('normalizes unknown errors', () => {
+  it('returns AppError when network error occurs', () => {
+    const error = new TypeError('Failed to fetch');
+
+    const result = normalizeError(error);
+
+    expect(result).toBeInstanceOf(AppError);
+    expect(result.code).toBe('NETWORK_ERROR');
+    expect(result.message).toBe('Não foi possível conectar ao servidor');
+    expect(result.cause).toBe(error);
+  });
+
+  it('normalizes native Error', () => {
     const result = normalizeError(new Error('boom'));
 
     expect(result).toBeInstanceOf(AppError);
+    expect(result.code).toBe('UNKNOWN_ERROR');
   });
 
   it('handles non-error values', () => {
     const result = normalizeError('oops');
 
     expect(result).toBeInstanceOf(AppError);
+    expect(result.code).toBe('UNKNOWN_ERROR');
   });
 });
