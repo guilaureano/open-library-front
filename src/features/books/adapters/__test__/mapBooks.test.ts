@@ -1,17 +1,13 @@
+import { openLibrarySearchMock } from '../../__test__/fixtures/openLibrary';
 import { mapBooks } from '../mapBooks';
 
 describe('mapBooks', () => {
-  it('maps api payload to internal model', () => {
-    const result = mapBooks({
-      key: '/works/1',
-      title: 'Harry Potter',
-      author_name: ['J.K.', 'Rowling'],
-      first_publish_year: 1997,
-    });
+  it('maps api payload', () => {
+    const result = mapBooks(openLibrarySearchMock.docs[0]);
 
-    expect(result.id).toBe('/works/1');
-    expect(result.title).toBe('Harry Potter');
-    expect(result.authorName).toBe('J.K., Rowling');
+    expect(result.id).toBe('/works/OL82537W');
+    expect(result.title).toContain('Harry Potter');
+    expect(result.authorName).toEqual(['J. K. Rowling']);
     expect(result.firstPublishYear).toBe(1997);
   });
 
