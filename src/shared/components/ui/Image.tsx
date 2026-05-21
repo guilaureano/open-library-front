@@ -29,7 +29,7 @@ export function Image({ alt, className, priority, src }: Props) {
         decoding="async"
         src={src.md}
         srcSet={`${src.sm} 320w, ${src.md} 640w, ${src.lg} 1024w`}
-        sizes="(max-width: 768px) 50vw, 220px"
+        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 420px"
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
         onLoad={() => setLoaded(true)}

@@ -44,7 +44,9 @@ export function Dialog({ open, onOpenChange, children }: DialogProps) {
 
   return createPortal(
     <DialogContext.Provider value={{ onClose: () => onOpenChange(false) }}>
-      <div className="fixed inset-0 z-50 overflow-hidden">{children}</div>
+      <div className="fixed inset-0 z-50 overscroll-none overflow-hidden">
+        {children}
+      </div>
     </DialogContext.Provider>,
     document.body,
   );
@@ -77,7 +79,7 @@ export function DialogContent({ children, className }: DialogContentProps) {
       <div className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden p-3 sm:p-6">
         <div
           className={cn(
-            'relative flex w-full max-w-[min(960px,calc(100vw-1.5rem))] max-h-[92dvh] min-w-0 flex-col overflow-hidden border border-border bg-background shadow-2xl animate-in fade-in zoom-in-95 sm:rounded-xl',
+            'relative flex w-full max-w-4xl max-h-[92dvh] min-w-0 flex-col overflow-hidden border border-border bg-background shadow-2xl animate-in fade-in zoom-in-95 sm:rounded-xl',
             className,
           )}
         >
