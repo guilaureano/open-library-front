@@ -14,14 +14,14 @@ export function Image({ src, alt, className }: Props) {
     <div className={`relative overflow-hidden bg-zinc-100 ${className}`}>
       <img
         src={src.sm}
-        alt=""
+        alt={alt}
         aria-hidden
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${loaded ? 'opacity-0' : 'opacity-100'}`}
       />
 
       <img
-        src={src.sm}
-        srcSet={`${src.sm}80w ${src.md} 160w, ${src.lg} 320w`}
+        src={src.md}
+        srcSet={`${src.sm} 320w, ${src.md} 640w, ${src.lg} 1024w`}
         alt={alt}
         loading="lazy"
         onLoad={() => setLoaded(true)}
