@@ -14,7 +14,7 @@ export function BookList({ books, onSelect }: Props) {
           key={book.id}
           book={book}
           onClick={onSelect}
-          priority={index < 4}
+          priority={index < 10}
         />
       ))}
     </section>
