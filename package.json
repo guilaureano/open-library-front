@@ -10,10 +10,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky",
-    "test": "vitest run",
-    "test:ui": "vitest --ui",
+    "test": "vitest",
+    "test:ci": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
