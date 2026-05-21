@@ -45,7 +45,9 @@ export function BookDetailsDialog({ book, open, onClose }: Props) {
                 <DialogTitle className="text-2xl font-medium leading-tight md:text-3xl">
                   {book.title}
                 </DialogTitle>
-                <DialogTextTag>{book.authorName}</DialogTextTag>
+                <DialogTextTag>
+                  {book.authorName?.map((author) => author).join(', ')}
+                </DialogTextTag>
               </DialogHeader>
 
               <div className="min-h-0 flex-1 overflow-y-auto p-6 md:p-8">
