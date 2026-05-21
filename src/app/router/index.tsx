@@ -1,8 +1,12 @@
 import { MainLayout } from '@/app/layouts/MainLayout';
 import { AuthorPage } from '@/features/authors/pages/AuthorPage';
-import { BookPage } from '@/features/books/pages/BookPage';
-import { HomePage } from '@/features/home/pages/HomePage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import { BookSkeleton } from '@/features/books/components/BookSkeleton';
+import { lazy, Suspense } from 'react';
+
+const BookPage = lazy(() => import('@/features/books/pages/BookPage'));
+const HomePage = lazy(() => import('@/features/home/pages/HomePage'));
 
 const router = createBrowserRouter([
   {
@@ -29,5 +33,9 @@ const router = createBrowserRouter([
 ]);
 
 export function AppRouter() {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense fallback={<BookSkeleton />}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }

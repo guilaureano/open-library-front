@@ -10,7 +10,7 @@ import { BookWelcome } from '../components/BookWelcome';
 import { useBooks } from '../hooks/useBooks';
 import type { Book } from '../types';
 
-export const BookPage = () => {
+const BookPage = () => {
   const { t } = useTranslation('books');
   const [searchParams, setSearchParams] = useSearchParams();
   const searchFromUrl = searchParams.get('search') ?? '';
@@ -78,3 +78,5 @@ export const BookPage = () => {
     </main>
   );
 };
+
+export default BookPage;

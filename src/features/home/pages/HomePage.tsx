@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { HomeInputForm } from '../components/HomeInputForm';
 
-export function HomePage() {
+function HomePage() {
   const { t } = useTranslation('home');
 
   return (
@@ -31,3 +31,5 @@ export function HomePage() {
     </main>
   );
 }
+
+export default HomePage;
