@@ -4,9 +4,10 @@ import { Image } from '@/shared/components/ui/Image';
 type Props = {
   book: Book;
   onClick?: (book: Book) => void;
+  priority?: boolean;
 };
 
-export function BookCard({ book, onClick }: Props) {
+export function BookCard({ book, onClick, priority }: Props) {
   return (
     <article className="group">
       <button
@@ -18,6 +19,7 @@ export function BookCard({ book, onClick }: Props) {
           <Image
             src={book.coverUrl}
             alt={book.title}
+            priority={priority}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>

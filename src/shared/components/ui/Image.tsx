@@ -5,9 +5,10 @@ type Props = {
   src: BookCover;
   alt: string;
   className?: string;
+  priority?: boolean;
 };
 
-export function Image({ src, alt, className }: Props) {
+export function Image({ alt, className, priority, src }: Props) {
   const [loaded, setLoaded] = useState(false);
 
   return (
@@ -23,7 +24,8 @@ export function Image({ src, alt, className }: Props) {
         src={src.md}
         srcSet={`${src.sm} 320w, ${src.md} 640w, ${src.lg} 1024w`}
         alt={alt}
-        loading="lazy"
+        loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : 'auto'}
         onLoad={() => setLoaded(true)}
         className={`h-full w-full object-cover transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
       />
