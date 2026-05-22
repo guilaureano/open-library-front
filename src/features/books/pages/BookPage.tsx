@@ -1,52 +1,32 @@
+import Pagination from '@/shared/components/ui/Pagination';
 import { AppError } from '@/shared/errors/AppError';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSearchParams } from 'react-router-dom';
 import { BookDetailsDialog } from '../components/BookDetailsDialog';
 import { BookList } from '../components/BookList';
 import { BookSearch } from '../components/BookSearch';
 import { BookSkeleton } from '../components/BookSkeleton';
 import { BookWelcome } from '../components/BookWelcome';
 import { useBooks } from '../hooks/useBooks';
+import { useBookSearchParams } from '../hooks/useBookSearchParams';
 import type { Book } from '../types';
 
 const BookPage = () => {
   const { t } = useTranslation('books');
-  const [searchParams, setSearchParams] = useSearchParams();
-  const searchFromUrl = searchParams.get('search') ?? '';
-  const [input, setInput] = useState(searchFromUrl);
-  const [debouncedQuery, setDebouncedQuery] = useState('');
+  const { input, page, query, setInput, setPage } = useBookSearchParams();
   const [selected, setSelected] = useState<Book | null>(null);
+  const { data, error, isLoading, isError } = useBooks({ query, page });
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDebouncedQuery(input);
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, [input]);
-
-  useEffect(() => {
-    const trimmed = input.trim();
-
-    if (trimmed) {
-      setSearchParams({
-        search: trimmed,
-      });
-    } else {
-      setSearchParams({});
-    }
-  }, [input, setSearchParams]);
-
-  const { data, error, isLoading, isError } = useBooks({
-    query: debouncedQuery,
-  });
   const books = data?.docs ?? [];
-
+  const totalResults = data?.totalResults ?? 0;
   const errorMessage =
     error instanceof AppError ? error.message : t('error.unexpected');
   const showEmptyState =
-    !isLoading && !isError && debouncedQuery.length > 2 && books.length === 0;
+    !isLoading && !isError && query.length > 2 && books.length === 0;
+
+  const handlePage = (value: number) => {
+    setPage(value);
+  };
 
   return (
     <main className="flex-1 w-full mx-auto max-w-6xl px-6 py-16">
@@ -69,6 +49,13 @@ const BookPage = () => {
       )}
       {!isLoading && !isError && (
         <BookList books={books} onSelect={setSelected} />
+      )}
+      {totalResults > 0 && (
+        <Pagination
+          page={page}
+          totalResults={totalResults}
+          setPage={handlePage}
+        />
       )}
       <BookDetailsDialog
         open={!!selected}

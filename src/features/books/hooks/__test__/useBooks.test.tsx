@@ -12,7 +12,7 @@ function wrapper({ children }: { children: ReactNode }) {
 
 describe('useBooks', () => {
   it('loads books', async () => {
-    const { result } = renderHook(() => useBooks({ query: 'harry' }), {
+    const { result } = renderHook(() => useBooks({ page: 1, query: 'harry' }), {
       wrapper,
     });
 

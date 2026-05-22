@@ -6,10 +6,12 @@ export type BookCover = {
 
 export interface Book {
   authorName?: string[];
-  coverUrl: BookCover;
+  cover?: number;
+  coverEdition?: number;
   firstPublishYear?: number;
   id: string;
   title: string;
+  titleEdition?: string;
 }
 
 export interface BooksResult {
@@ -21,10 +23,21 @@ export interface BooksResult {
 export interface OpenLibraryDoc {
   author_name?: string[];
   cover_i?: number;
-  editions?: OpenLibrarySearchResponse;
+  editions?: OpenLibraryEditions;
   first_publish_year?: number;
   key: string;
   title: string;
+}
+
+export interface OpenLibraryEditions {
+  docs: {
+    cover_i: number;
+    key: string;
+    title: string;
+  }[];
+  numFound: number;
+  numFoundExact: boolean;
+  start: number;
 }
 
 export interface OpenLibrarySearchResponse {
