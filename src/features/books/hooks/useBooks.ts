@@ -1,19 +1,21 @@
-import { getBooks } from '@/features/books/services/bookService';
+import { bookService } from '@/features/books/services/bookService';
 import type { BooksResult } from '@/features/books/types';
 import type { AppError } from '@/shared/errors/AppError';
 import { useQuery } from '@tanstack/react-query';
 
 interface IUseBooks {
   query: string;
+  page: number;
 }
 
-export function useBooks({ query }: IUseBooks) {
+export function useBooks({ page, query }: IUseBooks) {
   return useQuery<BooksResult, AppError>({
-    queryKey: ['books', query],
-    queryFn: () => getBooks(query),
+    queryKey: ['books', query, page],
+    queryFn: () => bookService({ page, query }),
     enabled: query.length > 2,
     staleTime: 1000 * 60 * 5,
     gcTime: 1000 * 60 * 60,
+    // placeholderData: keepPreviousData,
     retry: 2,
     refetchOnWindowFocus: false,
   });

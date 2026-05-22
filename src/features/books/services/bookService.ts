@@ -3,14 +3,19 @@ import { logger } from '@/shared/lib/logger/logger';
 import { mapBooks } from '../adapters/mapBooks';
 import { searchBooks } from '../api/searchBooks';
 
-export async function getBooks(query: string) {
+type Params = {
+  query: string;
+  page: number;
+};
+
+export async function bookService({ page, query }: Params) {
   try {
-    const response = await searchBooks(query);
+    const response = await searchBooks({ page, query });
 
     return {
       totalResults: response.numFound,
       start: response.start,
-      docs: response.docs.slice(0, 20).map(mapBooks),
+      docs: response.docs.map(mapBooks),
     };
   } catch (error) {
     const normalized = normalizeError(error);
