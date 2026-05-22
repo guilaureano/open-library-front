@@ -8,6 +8,7 @@ import {
 } from '@/shared/components/ui/Dialog';
 import { Image } from '@/shared/components/ui/Image';
 import { useBookDetails } from '../hooks/useBookDetails';
+import { buildCoversUrl } from '../lib/buildCoversUrl';
 import type { Book } from '../types';
 import { BookDetailsSkeleton } from './BookDetailsSkeleton';
 
@@ -20,6 +21,7 @@ type Props = {
 export function BookDetailsDialog({ book, open, onClose }: Props) {
   const { data, isLoading } = useBookDetails(open ? book?.id : undefined);
   if (!book) return null;
+  const cover = buildCoversUrl(book.cover);
 
   return (
     <Dialog open={open} onOpenChange={(o) => !o && onClose()}>
@@ -30,7 +32,7 @@ export function BookDetailsDialog({ book, open, onClose }: Props) {
           <div className="grid max-h-[90vh] md:grid-cols-[280px_1fr] md:h-105">
             <div className="overflow-hidden bg-muted">
               <Image
-                src={book.coverUrl}
+                src={cover}
                 alt={book.title}
                 className="h-full w-full object-cover"
               />
@@ -50,7 +52,7 @@ export function BookDetailsDialog({ book, open, onClose }: Props) {
                 </DialogTextTag>
               </DialogHeader>
 
-              <div className="min-h-0 flex-1 overflow-y-auto p-6 md:p-8">
+              <div className="min-h-0 flex-1 overflow-y-auto p-6 md:p-8 bg-white">
                 {data.description && (
                   <p className="text-sm leading-7 text-foreground/80">
                     {data.description}
