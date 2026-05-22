@@ -136,7 +136,7 @@ export function DialogTextTag({
   return (
     <h2
       className={cn(
-        `text-xs uppercase tracking-[0.18em] text-accent`,
+        `text-xs font-semibold uppercase tracking-[0.18em] text-amber-800`,
         className,
       )}
       {...props}
@@ -148,5 +148,10 @@ export function DialogDescription({
   className,
   ...props
 }: HTMLAttributes<HTMLParagraphElement>) {
-  return <p className={cn(`text-sm text-accent`, className)} {...props} />;
+  return (
+    <p
+      className={cn(`text-sm font-semibold text-amber-700`, className)}
+      {...props}
+    />
+  );
 }

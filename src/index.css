@@ -117,10 +117,6 @@
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
   html {
     scrollbar-gutter: stable;
   }
@@ -138,5 +134,53 @@
   h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'Fraunces';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./shared/fonts/fraunces-v38-latin-regular.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'Fraunces';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./shared/fonts/fraunces-v38-latin-500.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'Fraunces';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./shared/fonts/fraunces-v38-latin-600.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./shared/fonts/inter-v20-latin-regular.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./shared/fonts/inter-v20-latin-500.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./shared/fonts/inter-v20-latin-600.woff2') format('woff2');
   }
 }

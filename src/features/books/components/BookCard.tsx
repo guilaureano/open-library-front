@@ -32,13 +32,13 @@ export function BookCard({ book, onClick, priority }: Props) {
             <h2 className="truncate text-base font-medium tracking-tight text-wrap text-left mb-2">
               {book.title}
             </h2>
-            <p className="flex-1 text-sm text-accent text-left">
+            <p className="flex-1 text-sm font-normal text-amber-800 text-left">
               {book.authorName?.map((author) => author).join(', ')}
             </p>
           </div>
 
           {book.firstPublishYear && (
-            <span className="shrink-0 leading-6 font-semibold text-sm text-amber-900 ml-4">
+            <span className="shrink-0 leading-6 font-semibold text-sm text-amber-800 ml-4">
               {book.firstPublishYear}
             </span>
           )}
