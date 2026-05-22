@@ -10,18 +10,28 @@ export const openLibrarySearchMock: OpenLibrarySearchResponse = {
       author_name: ['J. K. Rowling'],
       first_publish_year: 1997,
       cover_i: 12345,
+      editions: {
+        docs: [
+          {
+            cover_i: 15221820,
+            key: '/books/OL30621390M',
+            title: 'Harry Potter e a pedra filosofal',
+          },
+        ],
+        numFound: 100,
+        numFoundExact: true,
+        start: 0,
+      },
     },
   ],
 };
 
 export const mappedBookMock: Book = {
+  authorName: ['J. K. Rowling'],
+  cover: 12345,
+  coverEdition: 15221820,
+  firstPublishYear: 1997,
   id: '/works/OL82537W',
   title: 'Harry Potter and the Philosopher Stone',
-  authorName: ['J. K. Rowling'],
-  firstPublishYear: 1997,
-  coverUrl: {
-    sm: expect.any(String) as never,
-    md: expect.any(String) as never,
-    lg: expect.any(String) as never,
-  },
+  titleEdition: 'Harry Potter e a pedra filosofal',
 };
