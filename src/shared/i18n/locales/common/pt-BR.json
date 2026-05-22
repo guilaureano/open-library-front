@@ -1,0 +1,5 @@
+{
+  "next": "Próximo",
+  "previous": "Anterior",
+  "pageOf": "Página {{param1}} de {{param2}}"
+}

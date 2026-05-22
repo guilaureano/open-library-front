@@ -7,6 +7,9 @@ import homePtBR from '@/features/home/locales/pt-BR.json';
 import i18n from 'i18next';
 import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
+import commonEnUS from './locales/common/en-US.json';
+import commonEsES from './locales/common/es-ES.json';
+import commonPtBR from './locales/common/pt-BR.json';
 import layoutEnUS from './locales/layout/en-US.json';
 import layoutEsES from './locales/layout/es-ES.json';
 import layoutPtBR from './locales/layout/pt-BR.json';
@@ -26,16 +29,19 @@ i18n
     resources: {
       'en-US': {
         books: booksEnUS,
+        common: commonEnUS,
         home: homeEnUS,
         layout: layoutEnUS,
       },
       'es-ES': {
         books: booksEsES,
+        common: commonEsES,
         home: homeEsES,
         layout: layoutEsES,
       },
       'pt-BR': {
         books: booksPtBR,
+        common: commonPtBR,
         home: homePtBR,
         layout: layoutPtBR,
       },
