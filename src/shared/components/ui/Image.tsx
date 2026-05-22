@@ -2,14 +2,20 @@ import type { BookCover } from '@/features/books/types';
 import { useState } from 'react';
 
 type Props = {
-  src: BookCover;
   alt: string;
   className?: string;
+  fallbackSrc?: string;
+  src: string;
+  sizes?: BookCover;
   priority?: boolean;
 };
 
-export function Image({ alt, className, priority, src }: Props) {
+export function Image({ alt, className, priority, src, sizes }: Props) {
   const [loaded, setLoaded] = useState(false);
+  const srcSet =
+    sizes && Object.keys(sizes).length > 0
+      ? `${sizes.sm} 320w, ${sizes.md} 640w, ${sizes.lg} 1024w`
+      : undefined;
 
   return (
     <div
@@ -17,7 +23,7 @@ export function Image({ alt, className, priority, src }: Props) {
     >
       {!loaded && (
         <img
-          src={src.sm}
+          src={src}
           alt={alt}
           aria-hidden
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500`}
@@ -27,8 +33,8 @@ export function Image({ alt, className, priority, src }: Props) {
       <img
         alt={alt}
         decoding="async"
-        src={src.md}
-        srcSet={`${src.sm} 320w, ${src.md} 640w, ${src.lg} 1024w`}
+        src={src}
+        srcSet={srcSet}
         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 420px"
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}

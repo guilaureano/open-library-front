@@ -10,6 +10,7 @@ type Props = {
 
 export function BookCard({ book, onClick, priority }: Props) {
   const displayCover = buildCoversUrl(book.cover);
+  const fallback = buildCoversUrl();
 
   return (
     <article className="group">
@@ -20,10 +21,12 @@ export function BookCard({ book, onClick, priority }: Props) {
       >
         <div className="aspect-2/3 overflow-hidden rounded-md bg-muted">
           <Image
-            src={displayCover}
             alt={book.title}
-            priority={priority}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            fallbackSrc={fallback.md}
+            src={displayCover.md}
+            sizes={displayCover}
+            priority={priority}
           />
         </div>
 

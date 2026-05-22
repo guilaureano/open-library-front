@@ -22,6 +22,7 @@ export function BookDetailsDialog({ book, open, onClose }: Props) {
   const { data, isLoading } = useBookDetails(open ? book?.id : undefined);
   if (!book) return null;
   const cover = buildCoversUrl(book.cover);
+  const fallback = buildCoversUrl();
 
   return (
     <Dialog open={open} onOpenChange={(o) => !o && onClose()}>
@@ -32,9 +33,11 @@ export function BookDetailsDialog({ book, open, onClose }: Props) {
           <div className="grid max-h-[90vh] md:grid-cols-[280px_1fr] md:h-105">
             <div className="overflow-hidden bg-muted">
               <Image
-                src={cover}
                 alt={book.title}
                 className="h-full w-full object-cover"
+                fallbackSrc={fallback.md}
+                src={cover.md}
+                sizes={cover}
               />
             </div>
 
