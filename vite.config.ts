@@ -14,7 +14,17 @@ export default defineConfig({
     setupFiles: './src/test/setup.ts',
     coverage: {
       reporter: ['text', 'html'],
-      exclude: ['src/shared/lib/logger/**', 'src/shared/config/env.ts'],
+      exclude: [
+        'coverage/**',
+        'src/shared/lib/logger/**',
+        'src/shared/config/env.ts',
+      ],
+      thresholds: {
+        lines: 90,
+        functions: 90,
+        statements: 90,
+        branches: 70,
+      },
     },
   },
 });
