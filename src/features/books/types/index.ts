@@ -7,11 +7,9 @@ export type BookCover = {
 export interface Book {
   authorName?: string[];
   cover?: number;
-  coverEdition?: number;
   firstPublishYear?: number;
   id: string;
   title: string;
-  titleEdition?: string;
 }
 
 export interface BooksResult {

@@ -15,7 +15,7 @@ export const openLibrarySearchMock: OpenLibrarySearchResponse = {
           {
             cover_i: 15221820,
             key: '/books/OL30621390M',
-            title: 'Harry Potter e a pedra filosofal',
+            title: 'Harry Potter e a Pedra Filosofal',
           },
         ],
         numFound: 100,
@@ -29,9 +29,7 @@ export const openLibrarySearchMock: OpenLibrarySearchResponse = {
 export const mappedBookMock: Book = {
   authorName: ['J. K. Rowling'],
   cover: 12345,
-  coverEdition: 15221820,
   firstPublishYear: 1997,
   id: '/works/OL82537W',
   title: 'Harry Potter and the Philosopher Stone',
-  titleEdition: 'Harry Potter e a pedra filosofal',
 };

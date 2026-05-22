@@ -1,13 +1,17 @@
 import type { Book, OpenLibraryDoc } from '@/features/books/types';
+import { resolveBookLocale } from './resolveBookLocale';
 
-export function mapBooks(doc: OpenLibraryDoc): Book {
+type MapBooksProps = {
+  doc: OpenLibraryDoc;
+  language: string;
+};
+export function mapBooks({ doc, language }: MapBooksProps): Book {
+  const { title, cover } = resolveBookLocale({ doc, language });
   return {
     authorName: doc.author_name,
-    cover: doc.cover_i,
-    coverEdition: doc.editions?.docs[0].cover_i,
+    cover,
     firstPublishYear: doc.first_publish_year,
     id: doc.key,
-    title: doc.title,
-    titleEdition: doc.editions?.docs[0].title,
+    title,
   };
 }
