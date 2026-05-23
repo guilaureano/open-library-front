@@ -2,7 +2,7 @@ import { MainLayout } from '@/app/layouts/MainLayout';
 import { AuthorPage } from '@/features/authors/pages/AuthorPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { BookSkeleton } from '@/features/books/components/BookSkeleton';
+import { AppLoader } from '@/shared/components/ui/AppLoader';
 import { lazy, Suspense } from 'react';
 
 const BookPage = lazy(() => import('@/features/books/pages/BookPage'));
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
 
 export function AppRouter() {
   return (
-    <Suspense fallback={<BookSkeleton />}>
+    <Suspense fallback={<AppLoader />}>
       <RouterProvider router={router} />
     </Suspense>
   );
