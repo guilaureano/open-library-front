@@ -15,24 +15,9 @@ const Footer = () => {
           </a>
         </span>
 
-        <div className="flex flex-wrap justify-center items-center gap-2">
+        <div className="flex flex-wrap justify-center items-center gap-3">
           <span className="leading-6 text-center">{t('footer.text2')}</span>
           <div className="flex flex-row gap-2">
-            <a
-              href={ENV.GITHUB_PROFILE}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center"
-            >
-              <img
-                className="opacity-70 transition-opacity hover:opacity-100"
-                height={24}
-                width={24}
-                src={GitHubIcon}
-                alt="GitHub link icon"
-              />
-            </a>
-
             <a
               href={ENV.LINKEDIN_PROFILE}
               target="_blank"
@@ -45,6 +30,20 @@ const Footer = () => {
                 width={24}
                 src={LinkdinIcon}
                 alt="LinkedIn link icon"
+              />
+            </a>
+            <a
+              href={ENV.GITHUB_PROFILE}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center"
+            >
+              <img
+                className="opacity-70 transition-opacity hover:opacity-100"
+                height={24}
+                width={24}
+                src={GitHubIcon}
+                alt="GitHub link icon"
               />
             </a>
           </div>

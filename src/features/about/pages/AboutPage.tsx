@@ -26,9 +26,25 @@ const AboutPage = () => {
           <p>{t('phrase2')}</p>
           <p>{t('phrase3')}</p>
           <p>{t('phrase4')}</p>
+
+          <a
+            href={`${ENV.GITHUB_PROFILE}/open-library-front`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:border-gray-600"
+          >
+            <img
+              className="opacity-70 transition-opacity hover:opacity-100"
+              height={24}
+              width={24}
+              src={GitHubIcon}
+              alt="GitHub link icon"
+            />
+            View source code
+          </a>
         </div>
 
-        <div className="my-12 border-t border-border" />
+        <div className="my-10 border-t border-border" />
 
         <div className="flex items-start gap-4">
           <div className="space-y-6 leading-relaxed text-foreground/80  text-justify">
@@ -48,22 +64,6 @@ const AboutPage = () => {
 
             <div className="flex flex-wrap gap-4 pt-2">
               <a
-                href={ENV.GITHUB_PROFILE}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:border-gray-600"
-              >
-                <img
-                  className="opacity-70 transition-opacity hover:opacity-100"
-                  height={24}
-                  width={24}
-                  src={GitHubIcon}
-                  alt="GitHub link icon"
-                />
-                GitHub
-              </a>
-
-              <a
                 href={ENV.LINKEDIN_PROFILE}
                 target="_blank"
                 rel="noreferrer"
@@ -77,6 +77,21 @@ const AboutPage = () => {
                   alt="LinkedIn link icon"
                 />
                 LinkedIn
+              </a>
+              <a
+                href={ENV.GITHUB_PROFILE}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:border-gray-600"
+              >
+                <img
+                  className="opacity-70 transition-opacity hover:opacity-100"
+                  height={24}
+                  width={24}
+                  src={GitHubIcon}
+                  alt="GitHub link icon"
+                />
+                GitHub
               </a>
             </div>
           </div>
