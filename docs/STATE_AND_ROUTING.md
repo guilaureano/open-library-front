@@ -53,6 +53,25 @@ Responsibilities include:
 
 ---
 
+## Invalid Route Handling
+
+The application includes explicit invalid-route handling through a dedicated 404 page.
+
+This ensures:
+
+- predictable navigation behavior
+- graceful recovery from broken or outdated URLs
+- consistent user experience
+- no application crashes caused by unknown routes
+
+Routing resilience is treated as part of the overall navigation architecture.
+
+Rather than allowing unmatched routes to fail silently or produce unstable rendering behavior, the router resolves unknown paths through a dedicated fallback experience.
+
+This keeps navigation behavior explicit and production-safe.
+
+---
+
 ## Lazy Loaded Routes
 
 Pages are lazy loaded.
