@@ -10,6 +10,8 @@ A modern React application built with React, Vite, and TypeScript that consumes 
 
 This project was designed with a strong focus on scalable frontend architecture, performance, accessibility, testing strategy, and maintainable React patterns.
 
+![Biblioteca Search - Home](docs/images/screenshot_home.png)
+
 ---
 
 ## Why This Project Exists
@@ -26,6 +28,8 @@ The project serves both as a technical playground and as a public portfolio arti
 
 - Production: [https://open-library-front-beta.vercel.app](https://open-library-front-beta.vercel.app)
 - Search example: [https://open-library-front-beta.vercel.app/books?search=Harry](https://open-library-front-beta.vercel.app/books?search=Harry)
+
+<img src="docs/images/recording_books.gif" width="600" alt="Demo Biblioteca Search - Books">
 
 ---
 
@@ -50,6 +54,8 @@ The project serves both as a technical playground and as a public portfolio arti
 - Loading and empty states
 - Lazy-loaded routes and optimized rendering
 - Friendly 404 experience and route recovery
+
+<img src="docs/images/screenshot_404.png" width="600" alt="Friendly 404 experience and route recovery">
 
 ---
 
@@ -124,6 +130,10 @@ Commit messages are validated using Commitlint and Husky.
 ## Architecture Overview
 
 The project follows a feature-oriented architecture focused on separation of concerns and maintainability.
+
+Detailed architectural decisions are documented in `/docs/ARCHITECTURE.md`.
+
+<img src="docs/images/architecture-diagram.png" width="600" alt="Architecture Diagram">
 
 ```txt
 src
