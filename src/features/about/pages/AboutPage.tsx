@@ -51,7 +51,7 @@ const AboutPage = () => {
                 href={ENV.GITHUB_PROFILE}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent/10"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:border-gray-600"
               >
                 <img
                   className="opacity-70 transition-opacity hover:opacity-100"
@@ -67,7 +67,7 @@ const AboutPage = () => {
                 href={ENV.LINKEDIN_PROFILE}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent/10"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:border-gray-600"
               >
                 <img
                   className="opacity-70 transition-opacity hover:opacity-100"
