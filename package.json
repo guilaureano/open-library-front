@@ -7,10 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "check": "npm run lint && npm run typecheck && npm run test:coverage && npm run build",
     "lint": "eslint .",
-    "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
+    "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "prepare": "husky",
+    "clean": "rm -rf dist coverage",
     "test": "vitest",
     "test:ci": "vitest run",
     "test:coverage": "vitest run --coverage"
