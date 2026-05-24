@@ -30,12 +30,12 @@ const Topbar = () => {
             >
               {t('topbar.nav1')}
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/authors"
               className="transition-colors hover:text-foreground"
             >
               {t('topbar.nav2')}
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/about"
               className="transition-colors hover:text-foreground"

@@ -8,7 +8,7 @@ type TMenuDropdownMobile = {
 export const MenuDropdownMobile = ({ closeMenu }: TMenuDropdownMobile) => {
   const { t } = useTranslation('layout');
   return (
-    <div className="absolute top-full left-0 z-50 w-full border-b border-border bg-background px-6 py-4 shadow-sm md:hidden animate-in fade-in slide-in-from-top-2 duration-200">
+    <div className="absolute top-full left-0 z-50 w-full border-b border-border bg-secondary px-6 pt-6 pb-8 shadow-sm md:hidden animate-in fade-in slide-in-from-top-2 duration-200">
       <nav className="flex flex-col gap-4 text-sm font-medium text-muted-foreground">
         <NavLink
           to="/"
@@ -24,13 +24,13 @@ export const MenuDropdownMobile = ({ closeMenu }: TMenuDropdownMobile) => {
         >
           {t('topbar.nav1')}
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="/authors"
           onClick={closeMenu}
           className="transition-colors font-semibold hover:text-foreground py-1 border-b border-amber-950"
         >
           {t('topbar.nav2')}
-        </NavLink>
+        </NavLink> */}
         <NavLink
           to="/about"
           onClick={closeMenu}

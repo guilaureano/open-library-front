@@ -12,5 +12,10 @@
   "footer": {
     "text1": "API Open Library",
     "text2": "© 2026 Biblioteca Search. Desarrollado por Guilherme Laureano."
+  },
+  "notFoundPage": {
+    "title": "Página no encontrada",
+    "text1": "Parece que esta página se ha perdido entre las estanterías. Puede que la dirección haya cambiado o que el libro que busca esté en otra sección.",
+    "btn1": "Volver al inicio"
   }
 }
