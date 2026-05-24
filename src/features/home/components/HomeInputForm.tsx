@@ -9,7 +9,8 @@ export const HomeInputForm = () => {
   const { t } = useTranslation('home');
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
-  const [type, setType] = useState<SearchType>('title');
+  // const [type, setType] = useState<SearchType>('title');
+  const type: SearchType = 'title';
   const handleSubmit = (e: SubmitEvent) => {
     e.preventDefault();
     const q = `?search=${query.trim()}`;
@@ -25,7 +26,7 @@ export const HomeInputForm = () => {
       onSubmit={handleSubmit}
       className="w-full max-w-2xl rounded-2xl border border-border bg-background/70 p-3 shadow-sm backdrop-blur"
     >
-      <fieldset className="flex items-center px-4 gap-6 border-b border-border/60 pb-2 text-sm">
+      {/* <fieldset className="flex items-center px-4 gap-6 border-b border-border/60 pb-2 text-sm mb-3">
         <legend className="sr-only">{t('aria1')}</legend>
         {(['title', 'authors'] as const).map((opt) => (
           <label
@@ -45,9 +46,9 @@ export const HomeInputForm = () => {
             </span>
           </label>
         ))}
-      </fieldset>
+      </fieldset> */}
 
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-center mt-3">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
         <div className="flex flex-1 items-center gap-2 rounded-xl bg-background/60 px-4 py-2">
           <img src={searchIcon} className="h-4 w-4 mr-2" alt="search icon" />
           <input
