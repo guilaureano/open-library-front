@@ -131,13 +131,7 @@ Covers:
 
 ---
 
-## Planned Documentation
-
-Additional documents may be added over time.
-
-Potential topics include:
-
-### Internationalization
+### 6. Internationalization
 
 ```txt
 I18N.md
@@ -150,6 +144,14 @@ Topics:
 - translation architecture
 - Open Library language handling
 - content normalization
+
+---
+
+## Planned Documentation
+
+Additional documents may be added over time.
+
+Potential topics include:
 
 ### Engineering Decisions / ADRs
 
@@ -181,14 +183,15 @@ Topics:
 
 ## Documentation Status
 
-| Document             | Status  |
-| -------------------- | ------- |
-| ARCHITECTURE.md      | ✅      |
-| API_LAYER.md         | ✅      |
-| TESTING_STRATEGY.md  | ✅      |
-| STATE_AND_ROUTING.md | ✅      |
-| PERFORMANCE.md       | ✅      |
-| I18N.md              | Planned |
+| Document                     | Status  |
+| ---------------------------- | ------- |
+| ARCHITECTURE.md              | ✅      |
+| API_LAYER.md                 | ✅      |
+| TESTING_STRATEGY.md          | ✅      |
+| STATE_AND_ROUTING.md         | ✅      |
+| PERFORMANCE.md               | ✅      |
+| I18N.md                      | ✅      |
+| Engineering Decisions / ADRs | Planned |
 
 ---
 
