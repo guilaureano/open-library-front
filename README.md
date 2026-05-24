@@ -49,6 +49,7 @@ The project serves both as a technical playground and as a public portfolio arti
 - Error boundaries and resilient API handling
 - Loading and empty states
 - Lazy-loaded routes and optimized rendering
+- Friendly 404 experience and route recovery
 
 ---
 
@@ -201,6 +202,7 @@ This project includes several engineering practices intended to improve reliabil
 - Typed API layer
 - Centralized error normalization
 - Network request resilience
+- Friendly invalid-route recovery (404 handling)
 
 ---
 
