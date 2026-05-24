@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { MenuDropdownMobile } from './MenuDropdownMobile';
 
-export const Topbar = () => {
+const Topbar = () => {
   const { t } = useTranslation('layout');
   const [isOpen, setIsOpen] = useState(false);
   const closeMenu = () => setIsOpen(false);
@@ -35,6 +35,12 @@ export const Topbar = () => {
               className="transition-colors hover:text-foreground"
             >
               {t('topbar.nav2')}
+            </NavLink>
+            <NavLink
+              to="/about"
+              className="transition-colors hover:text-foreground"
+            >
+              {t('topbar.nav3')}
             </NavLink>
           </nav>
 
@@ -70,3 +76,5 @@ export const Topbar = () => {
     </header>
   );
 };
+
+export default Topbar;

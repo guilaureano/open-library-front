@@ -3,7 +3,7 @@ import LinkdinIcon from '@/shared/assets/linkedin.svg';
 import { ENV } from '@/shared/config/env';
 import { useTranslation } from 'react-i18next';
 
-export const Footer = () => {
+const Footer = () => {
   const { t } = useTranslation('layout');
 
   return (
@@ -53,3 +53,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

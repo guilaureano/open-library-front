@@ -1,5 +1,5 @@
-import { Footer } from '@/shared/components/Footer';
-import { Topbar } from '@/shared/components/Topbar';
+import Footer from '@/shared/components/Footer';
+import Topbar from '@/shared/components/Topbar';
 import { Outlet } from 'react-router-dom';
 
 export function MainLayout() {

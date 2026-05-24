@@ -11,7 +11,7 @@ function HomePage() {
           {t('text1')}
         </p>
 
-        <h1 className="mb-6 text-4xl font-medium leading-[1.02] tracking-tight text-balance md:text-5xl lg:text-6xl xl:text-7xl">
+        <h1 className="mb-6 text-5xl font-medium leading-[1.02] tracking-tight text-balance md:text-6xl lg:text-7xl xl:text-8xl">
           {t('text2')}
           <br />
           <span
