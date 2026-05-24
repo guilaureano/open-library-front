@@ -1,0 +1,15 @@
+{
+  "highlight": "Sobre o projeto",
+  "title1": "Sobre este projeto",
+  "title2": "Sobre mim",
+  "appName": "Biblioteca Search",
+  "phrase1": "é um projeto de engenharia de front-end construído em torno da API Open Library.",
+  "phrase2": "O objetivo não era simplesmente consumir uma API, mas explorar como uma aplicação React moderna pode ser projetada com arquitetura escalável, código de fácil manutenção, estratégia de testes, acessibilidade e desempenho em mente.",
+  "phrase3": "Este projeto experimenta práticas de front-end orientadas à produção, incluindo arquitetura baseada em funcionalidades, camadas de API tipadas, internacionalização, padrões de interface de usuário defensivos, verificações de qualidade automatizadas e testes com MSW e Vitest.",
+  "phrase4": "Mais do que uma ferramenta de busca de livros, este repositório serve como um campo de experimentação para engenharia e um registro público de decisões arquitetônicas, concessões e padrões de implementação.",
+  "phrase5": "Olá, eu me chamo Guilherme Laureano.",
+  "phrase6": "Sou um desenvolvedor de software com foco em front-end e experiência na criação de aplicações web utilizando React, TypeScript e ecossistemas JavaScript modernos, além de trabalhar com tecnologias de back-end quando necessário.",
+  "phrase7": "Gosto de projetar arquiteturas de front-end de fácil manutenção, aprimorar a experiência do desenvolvedor e tratar projetos de software como sistemas de longo prazo, em vez de telas ou recursos isolados.",
+  "phrase8": "Este projeto reflete a minha abordagem à engenharia: equilibrando a qualidade do código, a usabilidade, o desempenho e a tomada de decisões pragmáticas.",
+  "phrase9": "Se você quiser se conectar ou discutir oportunidades de engenharia de front-end, arquitetura ou colaboração, fique à vontade para entrar em contato pelo LinkedIn ou GitHub."
+}

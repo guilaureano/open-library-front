@@ -13,23 +13,30 @@ export const MenuDropdownMobile = ({ closeMenu }: TMenuDropdownMobile) => {
         <NavLink
           to="/"
           onClick={closeMenu}
-          className="transition-colors hover:text-foreground py-1"
+          className="transition-colors font-semibold hover:text-foreground py-1 border-b border-amber-950"
         >
           Home
         </NavLink>
         <NavLink
           to="/books"
           onClick={closeMenu}
-          className="transition-colors hover:text-foreground py-1"
+          className="transition-colors font-semibold hover:text-foreground py-1 border-b border-amber-950"
         >
           {t('topbar.nav1')}
         </NavLink>
         <NavLink
           to="/authors"
           onClick={closeMenu}
-          className="transition-colors hover:text-foreground py-1"
+          className="transition-colors font-semibold hover:text-foreground py-1 border-b border-amber-950"
         >
           {t('topbar.nav2')}
+        </NavLink>
+        <NavLink
+          to="/about"
+          onClick={closeMenu}
+          className="transition-colors font-semibold hover:text-foreground py-1 border-b border-amber-950"
+        >
+          {t('topbar.nav3')}
         </NavLink>
       </nav>
     </div>

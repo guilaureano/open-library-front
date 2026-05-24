@@ -1,0 +1,15 @@
+{
+  "highlight": "About the project",
+  "title1": "About this project",
+  "title2": "About me",
+  "appName": "Biblioteca Search",
+  "phrase1": "is a frontend engineering project built around the Open Library API.",
+  "phrase2": "The goal was not simply to consume an API, but to explore how a modern React application can be designed with scalable architecture, maintainable code, testing strategy, accessibility, and performance in mind.",
+  "phrase3": "This project experiments with production-oriented frontend practices, including feature-based architecture, typed API layers, internationalization, defensive UI patterns, automated quality checks, and testing with MSW and Vitest.",
+  "phrase4": "More than a book search experience, this repository serves as an engineering playground and a public record of architectural decisions, tradeoffs, and implementation patterns.",
+  "phrase5": "Hi, I'm Guilherme Laureano.",
+  "phrase6": "I'm a frontend-focused software engineer with experience building web applications using React, TypeScript, and modern JavaScript ecosystems, while also working across backend technologies when needed.",
+  "phrase7": "I enjoy designing maintainable frontend architectures, improving developer experience, and treating software projects as long-term systems rather than isolated screens or features.",
+  "phrase8": "This project reflects how I approach engineering: balancing code quality, usability, performance, and pragmatic decision-making.",
+  "phrase9": "If you'd like to connect or discuss frontend engineering, architecture, or collaboration opportunities, feel free to reach out through LinkedIn or GitHub."
+}

@@ -1,3 +1,6 @@
+import aboutEnUS from '@/features/about/locale/en-US.json';
+import aboutEsES from '@/features/about/locale/es-ES.json';
+import aboutPtBR from '@/features/about/locale/pt-BR.json';
 import booksEnUS from '@/features/books/locales/en-US.json';
 import booksEsES from '@/features/books/locales/es-ES.json';
 import booksPtBR from '@/features/books/locales/pt-BR.json';
@@ -28,18 +31,21 @@ i18n
     },
     resources: {
       'en-US': {
+        about: aboutEnUS,
         books: booksEnUS,
         common: commonEnUS,
         home: homeEnUS,
         layout: layoutEnUS,
       },
       'es-ES': {
+        about: aboutEsES,
         books: booksEsES,
         common: commonEsES,
         home: homeEsES,
         layout: layoutEsES,
       },
       'pt-BR': {
+        about: aboutPtBR,
         books: booksPtBR,
         common: commonPtBR,
         home: homePtBR,
